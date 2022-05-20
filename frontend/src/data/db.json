@@ -1,0 +1,93 @@
+[
+    {
+        "id":1,
+        "name":"Sword art online",
+        "year":2012,
+        "studios":"A-1 Pictures",
+        "seasonal":"Summer",
+        "episodes":25,
+        "image":"https://cdn.myanimelist.net/images/anime/11/39717.jpg",
+        "quantity":1
+    },
+    {
+        "id":2,
+        "name":"Attack on titan",
+        "year":2013,
+        "studios":"MAPPA",
+        "seasonal":"Spring",
+        "episodes":25,
+        "image":"https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+        "quantity":1
+
+    },
+    {
+        "id":3,
+        "name":"Noragami",
+        "year":2014,
+        "studios":"Bones",
+        "seasonal":"Winter",
+        "episodes":12,
+        "image":"https://cdn.myanimelist.net/images/anime/9/77809.jpg",
+        "quantity":1
+    },
+    {
+        "id":4,
+        "name":"Re:Zero",
+        "year":2016,
+        "studios":"White Fox",
+        "seasonal":"Spring",
+        "episodes":25,
+        "image":"https://cdn.myanimelist.net/images/anime/11/79410.jpg",
+        "quantity":1
+    },
+    {
+        "id":5,
+        "name":"My Dress-Up Darling",
+        "year":2022,
+        "studios":"CloverWorks",
+        "seasonal":"Winter",
+        "episodes":12,
+        "image":"https://cdn.myanimelist.net/images/anime/1179/119897.jpg",
+        "quantity":1
+    },
+    {
+        "id":6,
+        "name":"Fullmetal Alchemist: Brotherhood",
+        "year":2009,
+        "studios":"Bones",
+        "seasonal":"Spring",
+        "episodes":64,
+        "image":"https://cdn.myanimelist.net/images/anime/1223/96541.jpg",
+        "quantity":1
+    },
+    {
+        "id":7,
+        "name":"Steins;Gate",
+        "year":2011,
+        "studios":"White Fox",
+        "seasonal":"Spring",
+        "episodes":24,
+        "image":"https://cdn.myanimelist.net/images/anime/5/73199.jpg",
+        "quantity":1
+    },
+    {
+        "id":8,
+        "name":"Code Geass: Lelouch of the Rebellion",
+        "year":2006,
+        "studios":"Sunrise",
+        "seasonal":"Fall",
+        "episodes":25,
+        "image":"https://cdn.myanimelist.net/images/anime/5/50331.jpg",
+        "quantity":1
+    },
+    {
+        "id":9,
+        "name":"Jujutsu Kaisen",
+        "year":2016,
+        "studios":"White Fox",
+        "seasonal":"Spring",
+        "episodes":25,
+        "image":"https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+        "quantity":1
+    }
+]
