@@ -1,0 +1,131 @@
+.page-container-report {
+    margin-top: 6vh;
+  }
+  
+  .monitor-container {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    max-height: 100%;
+    // overflow-y: auto;
+  }
+  
+  .fix-height-monitor-report {
+    height: auto;
+    max-height: 55vh;
+    overflow-y: auto;
+  }
+  .fix-height-monitor-users-noneScroll {
+    height: auto;
+    max-height: 55vh;
+    overflow-y: hidden;
+  }
+  .custom-table-report {
+    background-color: #4f46e5;
+    color: white;
+  }
+  .paper-header-report {
+    height: auto;
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding: 30px 36px 34px 30px;
+  }
+  .searchBar-report {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    & .MuiFormControl-root {
+      padding: 0;
+    }
+    & .MuiGrid-grid-sm-3 {
+      margin-bottom: 12;
+    }
+  }
+  .filterForm-report {
+    margin-top: 15px !important;
+    .MuiOutlinedInput-root {
+      height: 57px !important;
+    }
+  }
+  .stick-footer-report {
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    .MuiTablePagination-selectLabel {
+      margin-top: 15px;
+    }
+    .MuiTablePagination-displayedRows {
+      margin-top: 15px;
+    }
+  }
+  .filterFormInput-report {
+    & input {
+      line-height: 18px;
+      height: 20px;
+      font-size: 16px;
+      border-color: #4f46e5 !important;
+      text-align: center;
+    }
+    & label.Mui-focused {
+      color: #4f46e5;
+    }
+    & .MuiOutlinedInput-root {
+      &.Mui-focused fieldset {
+        border-color: #4f46e5;
+      }
+    }
+  }
+  .buttonSearchDefault {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    padding: 14px 16px 14px 16px;
+    text-transform: none;
+  }
+  
+  .buttonClearDefault {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    margin-left: -20px;
+    padding: 14px 18px 14px 18px;
+    text-transform: none;
+    background-color: darkgray;
+    &:hover {
+      background-color: #3d3e41 !important;
+    }
+  }
+  .option-color {
+    color: #000000;
+  }
+  
+  .status {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    bottom: 0px;
+    background-color: green;
+  
+    &.Always {
+      background-color: #d1d100 !important;
+    }
+  }
+  
+  .status-option {
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -4px;
+  
+    & > .status-dot {
+      position: inherit;
+      margin-right: 10px;
+    }
+  }
+  
+  .pagination-report {
+    margin-top: 20px;
+  }
+  
