@@ -7,11 +7,11 @@ const ItemAnime =({anime})=>{
     const {user} =useSelector(state=>state.auth)
     const navigate = useNavigate();
     function handleAddToList(){
-        if(!user){
+        //if(!user){
             //navigate('/signin')
-        }else{
+        //}else{
             dispatch(addToList({...anime,quantity:1}))
-        }
+        //}
     }
     return(
         <div className="card" style={{width: '14rem',margin: '20px'}}>
