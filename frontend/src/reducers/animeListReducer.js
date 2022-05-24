@@ -28,15 +28,14 @@ export function animeListReducer(state=initialState,action){
         case SET_LIST:
             return action.payload
         case REDUCE_LIST:
-            if(!foundItem){
-                updatedList=[...state,action.payload]
+            if(foundItem.quantity-1===0){
+                return state.filter(item=>item.id!==foundItem.id)
             }else{
-                updatedList=state.map(item=>({
+                return state.map(item=>({
                     ...item,
-                    quantity:item.id=== foundItem.id ? item.quantity-1 :item.quantity
+                    quantity:item.id === foundItem.id ? item.quantity-1 :item.quantity
                 }))
             }
-            return updatedList
         default:
             return state
     }

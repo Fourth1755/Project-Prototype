@@ -1,45 +1,70 @@
 import React, { useState, useEffect } from "react";
-import {useSelector,useDispatch} from 'react-redux'
-import {delteList,addToList,reduceList} from "../../actions/animeListAction"
+import { useSelector, useDispatch } from 'react-redux'
+import { delteList, addToList, reduceList } from "../../actions/animeListAction"
+import {
+    TableBody,
+    TableCell,
+    TableContainer,
+    TableHead,
+    Typography,
+    Table,
+    TableRow,
+    Stack,
+    Button,
+    Container,
+    FormControl,
+    InputLabel,
+    Select,
+    Modal,
+    MenuItem
+} from '@mui/material'
 const AnimeListPage = () => {
-    const animeList=useSelector(state=>state.animeList)
-    const dispatch=useDispatch()
+    const animeList = useSelector(state => state.animeList)
+    const dispatch = useDispatch()
     return (
-        <div className="container">
+        <Container>
             <h1>Anime List Page</h1>
-            <table class="table table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Anime</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Number</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {animeList.length===0?
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td>List is empty</td>
-                        <td></td>
-                        <td></td>
-                    </tr>:animeList.map(item=>
-                    <tr cope="row" key={item.id}>
-                        <td>{item.id}</td>
-                        <td>{item.name}</td>
-                        <td>{item.year}</td>
-                        <td>
-                            <button type="button" className="btn btn" onClick={()=>dispatch(reduceList({...item,quantity:1}))}>-</button>
-                                {item.quantity}
-                            <button type="button" className="btn btn" onClick={()=>dispatch(addToList({...item,quantity:1}))}>+</button>
-                        </td>
-                        <td><button type="button" className="btn btn-danger" onClick={()=>dispatch(delteList(item.id))}>Delete</button></td>
-                    </tr>)}
-                </tbody>
-            </table>
-        </div>
+            <TableContainer>
+                <Table stickyHeader>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell align='center'>#</TableCell>
+                            <TableCell align='center'>Anime</TableCell>
+                            <TableCell align='center'>Year</TableCell>
+                            <TableCell align='center'>Number</TableCell>
+                            <TableCell align='center'>Delete</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    {animeList.length === 0 ?
+                        <TableCell colSpan={6} align='center'>
+                            <Typography>No Results</Typography>
+                        </TableCell> : <TableBody>
+                            {animeList.map((item, i) => (
+                                <TableRow key={i}>
+                                    <TableCell component="th" scope="row" align='center'>
+                                        {item.id}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align='center'>
+                                        {item.name}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align='center'>
+                                        {item.year}
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align='center'>
+                                        <button type="button" className="btn btn" onClick={() => dispatch(reduceList({ ...item, quantity: 1 }))}>-</button>
+                                        {item.quantity}
+                                        <button type="button" className="btn btn" onClick={() => dispatch(addToList({ ...item, quantity: 1 }))}>+</button>
+                                    </TableCell>
+                                    <TableCell component="th" scope="row" align='center'>
+                                        <button type="button" className="btn btn-danger" onClick={() => dispatch(delteList(item.id))}>Delete</button>
+                                    </TableCell>
+                                </TableRow>
+                            ))}
+                        </TableBody>
+                    }
+                </Table>
+            </TableContainer>
+        </Container>
     )
 }
 export default AnimeListPage;
