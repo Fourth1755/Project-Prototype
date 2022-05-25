@@ -1,6 +1,6 @@
 import {Routes,Route } from "react-router-dom";
 import bootstrap from 'bootstrap'
-import Navbar from "./component/Navbar";
+import Navbar from "./component/Navbar/index";
 import HomePage from "./pages/HomePage/index"
 import AnimeListPage from "./pages/AnimeListPage/index";
 import AnimeAllPage from "./pages/AnimeAllPage/index"

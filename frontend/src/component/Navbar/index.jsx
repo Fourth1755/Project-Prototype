@@ -15,6 +15,7 @@ import {
     Container,
     MenuItem,
 } from '@mui/material'
+import './index.scss'
 const pages = [
 { id:1,name: "Home", path: "/" },
 { id:2,name: "Anime List", path: "/animelist" },
@@ -100,7 +101,8 @@ const Navbar = () => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page.id} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page.name}</Typography>
+                                    <Typography textAlign="center">
+                                        <Link to={page.path}>{page.name}</Link></Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -122,7 +124,7 @@ const Navbar = () => {
                             textDecoration: 'none',
                         }}
                     >
-                        LOGO
+                        Anime Map
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
@@ -132,7 +134,7 @@ const Navbar = () => {
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'white', display: 'block' ,textDecoration: 'none',}}
                                 >
-                                    <Link to={page.path} className="nav-link">{page.path === "/animelist" ? <>{page.name} <span> {animeList.reduce((sum, item) => sum + item.quantity, 0)}</span></> : page.name}</Link>
+                                    <Link to={page.path} className="text-title">{page.path === "/animelist" ? <>{page.name} <span> {animeList.reduce((sum, item) => sum + item.quantity, 0)}</span></> : page.name}</Link>
                                 </Typography>
                                 
                             </>
