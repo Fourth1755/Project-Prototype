@@ -1,13 +1,16 @@
 import HighchartsAnime from "../../component/Highcharts";
 import animeData from '../../data/db.json'
+import {
+    Container,
+} from '@mui/material'
 const HomePage =()=>{
     return(
-        <div className="continer">
+        <Container>
             <h1>Home Page</h1>
             <HighchartsAnime
                 data={animeData}
             />
-        </div>
+        </Container>
     )
 }
 export default HomePage;

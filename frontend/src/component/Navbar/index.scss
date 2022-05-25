@@ -1,0 +1,15 @@
+$colorPink:#FF1493;
+$colorBlack:#141313;
+$colorWhite:#FFFFFF;
+.text-title{
+    color: $colorWhite;
+    text-decoration: none;
+    padding: 10px;
+    &:hover{
+        text-decoration: none;
+        color:$colorPink;
+    }
+}
+.appbar{
+    background-color: $colorPink;
+}

@@ -23,7 +23,8 @@ const AnimeListPage = () => {
     const dispatch = useDispatch()
     return (
         <Container>
-            <h1>Anime List Page</h1>
+            <br></br>
+            <h1>My Anime List</h1>
             <TableContainer>
                 <Table stickyHeader>
                     <TableHead>

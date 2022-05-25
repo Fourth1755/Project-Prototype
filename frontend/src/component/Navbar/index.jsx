@@ -15,6 +15,7 @@ import {
     Container,
     MenuItem,
 } from '@mui/material'
+import { ThemeProvider, createTheme } from '@mui/material/styles';
 import './index.scss'
 const pages = [
 { id:1,name: "Home", path: "/" },
@@ -46,24 +47,30 @@ const Navbar = () => {
     const handleCloseUserMenu = () => {
         setAnchorElUser(null);
     };
-
+    const darkTheme = createTheme({
+        palette: {
+          mode: 'dark',
+          primary: {
+            main: '#FF1493',
+          },
+        },
+      });
     return (
-        <AppBar position="static">
-            <Container maxWidth="xl">
+        <ThemeProvider theme={darkTheme}>
+        <AppBar>
+            <Container maxWidth="xl" >
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                     <Typography
                         variant="h6"
                         noWrap
-                        component="a"
-                        href="/"
                         sx={{
                             mr: 2,
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: '#FF1493',
                             textDecoration: 'none',
                         }}
                     >
@@ -112,7 +119,6 @@ const Navbar = () => {
                         variant="h5"
                         noWrap
                         component="a"
-                        href=""
                         sx={{
                             mr: 2,
                             display: { xs: 'flex', md: 'none' },
@@ -120,7 +126,7 @@ const Navbar = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: '#FF1493',
                             textDecoration: 'none',
                         }}
                     >
@@ -172,7 +178,7 @@ const Navbar = () => {
                     </Box>
                 </Toolbar>
             </Container>
-        </AppBar>
+        </AppBar></ThemeProvider>
     )
 }
 export default Navbar
