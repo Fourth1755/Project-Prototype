@@ -1,56 +1,51 @@
 import React, { useState, useEffect } from "react";
-import {useDispatch,useSelector} from 'react-redux'
-import { addToList } from "../../actions/animeListAction";
+import { useDispatch, useSelector } from 'react-redux'
+import { addToList } from "actions/animeListAction";
 import { useNavigate } from "react-router-dom";
 import SaveIcon from '@mui/icons-material/Save';
+
 import {
-    TableBody,
-    TableCell,
-    TableContainer,
-    TableHead,
     Typography,
-    Table,
-    TableRow,
     Stack,
     Button,
-    Container,
-    FormControl,
-    CardActions,
     CardContent,
     CardMedia,
     Card
 } from '@mui/material'
-const ItemAnime =({anime})=>{
-    const dispatch=useDispatch()
-    const {user} =useSelector(state=>state.auth)
+const ItemAnime = ({ anime }) => {
+    const dispatch = useDispatch()
+    const { user } = useSelector(state => state.auth)
     const navigate = useNavigate();
-    function handleAddToList(){
+    const [isDetailVisible, setIsDetailVisible] = useState(false)
+    const [activeData, setActiveData] = useState('')
+    function handleAddToList() {
         //if(!user){
-            //navigate('/signin')
+        //navigate('/signin')
         //}else{
-            dispatch(addToList({...anime,quantity:1}))
+        dispatch(addToList({ ...anime, quantity: 1 }))
         //}
     }
-    const handleDetail =(anime)=>{
-        
+    const handleDetail = (anime) => {
+        setIsDetailVisible(true)
+        setActiveData(anime)
     }
-    return(
+    return (
         <Card sx={{ maxWidth: 200 }}>
-                <CardMedia
-                    component="img"
-                    height="260"
-                    image={anime.image}
-                    alt="green iguana"
-                />
-                <CardContent>
-                <Typography gutterBottom 
-                    variant="h6" 
+            <CardMedia
+                component="img"
+                height="260"
+                image={anime.image}
+                alt="green iguana"
+            />
+            <CardContent>
+                <Typography gutterBottom
+                    variant="h6"
                     component="div"
                     sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
                         textDecoration: 'none',
-                        fontSize:16
+                        fontSize: 16
                     }}>
                     {anime.name}
                 </Typography>
@@ -58,17 +53,17 @@ const ItemAnime =({anime})=>{
                     {anime.year}
                 </Typography>
                 <Stack direction="row" spacing={1}>
-                    <Button 
+                    <Button
                         size="small"
-                        href="#text-buttons"
-                        onClick={()=>handleDetail(anime)}>Detail</Button>
-                    <Button 
+                        onClick={() => handleDetail(anime)}>Detail</Button>
+                    <Button
                         variant="contained"
                         size="small"
-                        startIcon={<SaveIcon/>}
+                        startIcon={<SaveIcon />}
                         onClick={handleAddToList}>Add</Button>
                 </Stack>
             </CardContent>
+
         </Card>
     );
 }
