@@ -1,0 +1,24 @@
+$colorPink:#FF1493;
+.paper-login{
+    border-radius: 20px !important;
+    width: 70%;
+    background-color: black;
+}
+.paper-login-login{
+    height: 520px;
+    padding: 40px;
+    border-radius: 20px !important;
+}
+body{
+    background-color: #ef99e8;
+}
+.image-login{
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+.button-login{
+    background-color: $colorPink !important;
+    &:hover{
+        background-color: #000000 !important;
+    }
+}

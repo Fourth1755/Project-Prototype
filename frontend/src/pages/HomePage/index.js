@@ -5,7 +5,9 @@ import {
 } from '@mui/material'
 const HomePage =()=>{
     return(
-        <Container>
+        <Container sx={{
+            paddingTop:10
+        }}>
             <h1>Home Page</h1>
             <HighchartsAnime
                 data={animeData}

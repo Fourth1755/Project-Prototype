@@ -12,7 +12,7 @@ const HighchartsAnime = (props) =>{
             height:800
         },
         title: {
-            text: 'Historic World Population by Region'
+            text: 'Anime'
         },
         xAxis: {
             categories: nameEachAnime,

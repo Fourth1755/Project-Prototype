@@ -22,8 +22,10 @@ const AnimeListPage = () => {
     const animeList = useSelector(state => state.animeList)
     const dispatch = useDispatch()
     return (
-        <Container>
-            <br></br>
+        <Container
+            sx={{
+                paddingTop:10
+            }}>
             <h1>My Anime List</h1>
             <TableContainer>
                 <Table stickyHeader>

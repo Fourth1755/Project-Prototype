@@ -27,8 +27,8 @@ const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 const Navbar = () => {
 
     const animeList = useSelector((state) => state.animeList)
-    //const {user} =useSelector((state)=>state.auth)
-    //const dispatch = useDispatch()
+    const {user} =useSelector((state)=>state.auth)
+    const dispatch = useDispatch()
 
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -148,6 +148,7 @@ const Navbar = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
+                        {user ? <>                        
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
@@ -174,7 +175,19 @@ const Navbar = () => {
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
                             ))}
-                        </Menu>
+                        </Menu></>:
+                        <Typography
+                            variant="h5"
+                            noWrap
+                            component="a"
+                            sx={{ 
+                                my: 2, 
+                                color: 'white', 
+                                display: 'block' ,
+                                textDecoration: 'none',}}
+                            >
+                                <Link to='/login' className="text-title">Login</Link>
+                        </Typography>}
                     </Box>
                 </Toolbar>
             </Container>

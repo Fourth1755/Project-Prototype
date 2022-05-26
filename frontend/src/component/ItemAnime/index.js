@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addToList } from "actions/animeListAction";
 import { useNavigate } from "react-router-dom";
 import SaveIcon from '@mui/icons-material/Save';
-
+import AnimeDetailModal from "component/AnimeDetailModal";
 import {
     Typography,
     Stack,
@@ -63,7 +63,14 @@ const ItemAnime = ({ anime }) => {
                         onClick={handleAddToList}>Add</Button>
                 </Stack>
             </CardContent>
-
+            <AnimeDetailModal
+                visible={isDetailVisible}
+                data={activeData}
+                onClose={() => {
+                    setIsDetailVisible(false)
+                    //setActiveData(undefined)
+                }}
+            />
         </Card>
     );
 }
