@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import {
     Container,
 } from '@mui/material'
-const AnimeDetailPage=(props)=>{
-    
-    return(
-        <Container>
-            <br></br>
-            <h1>All Anime</h1>
+const AnimeDetailPage = (props) => {
+    const {data} =props
+    return (
+        <Container
+            sx={{
+                paddingTop: 10
+            }}>
+            <h1>{data.name}</h1>
+            
         </Container>
     );
 }
