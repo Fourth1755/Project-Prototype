@@ -59,6 +59,9 @@ const ItemAnime = ({ anime }) => {
                     <Button
                         variant="contained"
                         size="small"
+                        sx={{
+                            backgroundColor:'#FF1493'
+                        }}
                         startIcon={<SaveIcon />}
                         onClick={handleAddToList}>Add</Button>
                 </Stack>

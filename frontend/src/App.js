@@ -1,4 +1,4 @@
-import {Routes,Route } from "react-router-dom";
+import { BrowserRouter, Redirect, Route ,Routes} from 'react-router-dom'
 import bootstrap from 'bootstrap'
 import Navbar from "./component/Navbar/index";
 import HomePage from "./pages/HomePage/index"
@@ -7,6 +7,7 @@ import AnimeAllPage from "./pages/AnimeAllPage/index"
 import LoginPage from "pages/LoginPage";
 import {useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom";
+import SettingPage from 'pages/SettingPage';
 function App() {
   const navigate = useNavigate();
   const UnAuthApp=()=>{
@@ -15,6 +16,7 @@ function App() {
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/anime" element={<AnimeAllPage/>}/>
+            <Route path="/setting" element={<SettingPage/>}/>
         </Routes>
     )
   }
@@ -24,7 +26,8 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/animelist" element={<AnimeListPage/>}/>
           <Route path="/anime" element={<AnimeAllPage/>}/>
-          <Route path="/login" element={<LoginPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>     
+          <Route path="/setting" element={<SettingPage/>}/>
         </Routes>
 
   )
