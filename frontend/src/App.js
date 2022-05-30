@@ -7,7 +7,7 @@ import AnimeAllPage from "./pages/AnimeAllPage/index"
 import LoginPage from "pages/LoginPage";
 import {useSelector} from "react-redux"
 import { useNavigate } from "react-router-dom";
-import SettingPage from 'pages/SettingPage';
+import StudioPage from 'pages/StudioPage';
 function App() {
   const navigate = useNavigate();
   const UnAuthApp=()=>{
@@ -16,7 +16,7 @@ function App() {
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/anime" element={<AnimeAllPage/>}/>
-            <Route path="/setting" element={<SettingPage/>}/>
+            <Route path="/studio" element={<StudioPage/>}/>
         </Routes>
     )
   }
@@ -27,7 +27,7 @@ function App() {
           <Route path="/animelist" element={<AnimeListPage/>}/>
           <Route path="/anime" element={<AnimeAllPage/>}/>
           <Route path="/login" element={<LoginPage/>}/>     
-          <Route path="/setting" element={<SettingPage/>}/>
+          <Route path="/studio" element={<StudioPage/>}/>
         </Routes>
 
   )

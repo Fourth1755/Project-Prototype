@@ -21,7 +21,9 @@ const pages = [
 { id:1,name: "Home", path: "/" },
 { id:2,name: "Anime List", path: "/animelist" },
 { id:3,name: "Anime", path: "/anime" },
-{ id:4,name: "Setting", path: "/setting" }];
+//{ id:4,name: "Setting", path: "/setting" },
+{ id:5,name: "Studio", path: "/studio" }
+];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 
