@@ -11,6 +11,6 @@ export function signin(email,password){
             else{
                 reject('Email or passwprd is invalid')
             }
-        },3000)
+        },500)
     })
 }

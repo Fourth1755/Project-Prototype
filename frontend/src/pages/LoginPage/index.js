@@ -23,14 +23,34 @@ const LoginPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
     const { loading, error } = useSelector(state => state.status)
-    const submitLogin = () => {
-        dispatch(fetchAuthAsync(email, password))
-        try {
+
+    const [messagesErrorEmail, setMessagesErrorEmail] = useState('');
+    const [isErrorEmail, setIsErrorEmail] = useState(false);
+
+    const [messagesErrorPassword, setMessagesErrorPassword] = useState('');
+    const [isErrorPassword, setIsErrorPassword] = useState(false);
 
 
-        } catch (error) {
-            Swal.fire('Error', error, 'error')
+    const submitLogin = async () => {
+        if (email.length === 0) {
+            setIsErrorEmail(true)
+            setMessagesErrorEmail("Please fill Email")
+        } else if (password.length === 0) {
+            setIsErrorPassword(true)
+            setMessagesErrorPassword("Please fill Password")
+            
+        } else {
+            try {
+                Swal.showLoading()
+                await dispatch(fetchAuthAsync(email, password))
+                Swal.close()
+                
+            } catch (error) {
+                Swal.fire('Error', error, 'error')
+            }
         }
+
+
     }
     return (
         <Grid
@@ -55,19 +75,19 @@ const LoginPage = () => {
                         <Paper elevation={0} className="paper-login-login">
                             <Stack spacing={3}>
                                 <Typography
-                                variant="h5"
-                                noWrap
-                                sx={{
-                                    mr: 2,
-                                    display: { xs: 'none', md: 'flex' },
-                                    fontWeight: 700,
-                                    color: '#FF1493',
-                                    textDecoration: 'none',
-                                    textAlign:'center'
-                                }}
-                            >
-                                Wellcome to Anime Map
-                            </Typography>
+                                    variant="h5"
+                                    noWrap
+                                    sx={{
+                                        mr: 2,
+                                        display: { xs: 'none', md: 'flex' },
+                                        fontWeight: 700,
+                                        color: '#FF1493',
+                                        textDecoration: 'none',
+                                        textAlign: 'center'
+                                    }}
+                                >
+                                    Wellcome to Anime Map
+                                </Typography>
                                 <TextField
                                     id="outlined-basic"
                                     label="Email address"
@@ -75,7 +95,9 @@ const LoginPage = () => {
                                     name='email'
                                     value={email}
                                     type="email"
-                                    onChange={e => setEmail(e.target.value)} />
+                                    onChange={e => setEmail(e.target.value)}
+                                    helperText={messagesErrorEmail}
+                                    error={isErrorEmail} />
                                 <TextField
                                     id="outlined-basic"
                                     label="Password"
@@ -83,7 +105,9 @@ const LoginPage = () => {
                                     type="password"
                                     name='password'
                                     value={password}
-                                    onChange={e => setPassword(e.target.value)} />
+                                    onChange={e => setPassword(e.target.value)}
+                                    helperText={messagesErrorPassword}
+                                    error={isErrorPassword} />
                                 <Button
                                     variant="contained"
                                     size="small"

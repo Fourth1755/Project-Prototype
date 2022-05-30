@@ -9,8 +9,8 @@ import {
 
 const SideBar=()=>{
     const routes = [
-        { path: '/app/monitors', title: 'Monitor', icon: 'fas fa-tv', id: 'mornitor' },
-        { path: '/app/chats', title: 'Chat', icon: 'far fa-envelope', id: 'chat' },
+        { path: '/app/anime', title: 'Anime', id: 'anime' },
+        { path: '/app/studio', title: 'Studio', id: 'studio' },
         // {
         //   title: 'Setting',
         //   icon: 'fas fa-cog',
@@ -27,13 +27,13 @@ const SideBar=()=>{
         <div className="app-sidebar">
             <div className="routes">
             <List sx={{ width: '100%', maxWidth: 360 }} component="nav">
-              {routes.map((route,i)=>{
+              {routes.map((route,i)=>(
                 <ListItemButton>
                   <div>
                     <ListItemText primary={route.title}/>
                   </div>
                 </ListItemButton>
-              })}
+              ))}
             </List>
             </div>
         </div>
